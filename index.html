@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Online CV of John Doe - Software Consultant, Author, and Trainer." />
+  <title>John Doe - Online CV</title>
+
+  <!-- Importing Google Fonts for consistent and modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Adding icons with Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- External CSS file (styles.css) for design and layout -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>John Doe</h1>
+    <address>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:john@example.com">john@example.com</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mranshulyadav/" target="_blank">LinkedIn Profile</a></p>
+    </address>
+  </header>
+
+  <!-- Main content of the CV -->
+  <main>
+    <section id="summary">
+      <h2>Professional Summary</h2>
+      <p>I am a Software Consultant, Author, and Trainer with five years of experience in the software industry. You can contact me for creating engaging software training solutions.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>Executive Program in General Management, IIM-Calcutta, Aug 2022 – Present</li>
+        <li>Advanced Certification Course in AI and ML, IIIT-Hyderabad, Jan 2020 – May 2020</li>
+        <li>Bachelor of Technology, IIT-Kanpur, Aug 2010 – May 2014</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <ul>
+        <li>Lead Instructor, TalentSprint, Jan 2021 – Present</li>
+        <li>Software Developer, Amazon, Jan 2020 – Jan 2021</li>
+        <li>Software Developer and Trainer, InterviewBit, May 2019 – Dec 2019</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Algorithms: Advanced</li>
+        <li>Computational Thinking: Advanced</li>
+        <li>Web Development: Intermediate</li>
+        <li>Machine Learning: Intermediate</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
+        <!-- Collect name input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <!-- Collect email input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <!-- Collect message input -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+        <!-- Submit button -->
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
