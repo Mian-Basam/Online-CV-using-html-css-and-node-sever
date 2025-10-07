@@ -4,83 +4,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Online CV of John Doe - Software Consultant, Author, and Trainer." />
-  <title>John Doe - Online CV</title>
+  <meta name="description" content="Online CV of Mian Basam Ahmad - Software Engineer and Instructor." />
+  <title>Mian Basam Ahmad - Online CV</title>
 
-  <!-- Importing Google Fonts for consistent and modern typography -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Adding icons with Font Awesome -->
+  <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <!-- External CSS file (styles.css) for design and layout -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header>
-    <h1>John Doe</h1>
+    <h1>Mian Basam Ahmad</h1>
     <address>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:john@example.com">john@example.com</a></p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mranshulyadav/" target="_blank">LinkedIn Profile</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:mbasamahmad@gmail.com">mbasamahmad@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> 0315-4550165</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mian-basam-ahmad" target="_blank">linkedin.com/in/mian-basam-ahmad</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/Mian-Basam-Ahmad" target="_blank">github.com/Mian-Basam-Ahmad</a></p>
     </address>
   </header>
 
-  <!-- Main content of the CV -->
   <main>
+    <!-- Professional Summary -->
     <section id="summary">
       <h2>Professional Summary</h2>
-      <p>I am a Software Consultant, Author, and Trainer with five years of experience in the software industry. You can contact me for creating engaging software training solutions.</p>
+      <p>Experienced Software Engineer specializing in Node.js, MongoDB, and Express.js with a strong background in full-stack web development, academic instruction, and project leadership. Passionate about building scalable systems, improving code quality, and mentoring others to achieve excellence in software engineering.</p>
     </section>
 
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="job">
+        <h3>Software Engineer - Educative</h3>
+        <p class="date">July 2021 – Present</p>
+        <ul>
+          <li>Led Node.js development for large-scale enterprise applications using MongoDB and Express.js.</li>
+          <li>Enhanced system stability by resolving critical bugs and implementing new features.</li>
+          <li>Collaborated in agile sprints, participating in daily scrums for improved project communication.</li>
+          <li>Promoted from Junior Software Engineer to Software Engineer for outstanding performance.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Software Engineer - SolutionInn</h3>
+        <p class="date">2016 – 2017</p>
+        <ul>
+          <li>Implemented PDF viewing features and optimized admin panels for improved UX.</li>
+          <li>Collaborated with stakeholders to improve website performance and usability.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Lecturer and Lab Instructor - PUCIT, FAST NUCES, UMT</h3>
+        <p class="date">2016 – 2021</p>
+        <ul>
+          <li>Taught Data Structures, OOP, Database Systems, and Web Development courses.</li>
+          <li>Guided students through coding exercises, debugging, and practical implementation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Movie Review Website:</strong> A Node.js web app allowing users to rate and comment on movies. Integrated MongoDB for data storage.</li>
+        <li><strong>Chat Application:</strong> Real-time chat app using Node.js and WebSocket for instant communication.</li>
+        <li><strong>Constructo:</strong> A house construction estimation app that calculates cost and material requirements from user input and 2D maps.</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li>Executive Program in General Management, IIM-Calcutta, Aug 2022 – Present</li>
-        <li>Advanced Certification Course in AI and ML, IIIT-Hyderabad, Jan 2020 – May 2020</li>
-        <li>Bachelor of Technology, IIT-Kanpur, Aug 2010 – May 2014</li>
+        <li><strong>MSCS</strong> – FAST NUCES (2018 – 2020) | GPA: 3.5/4.0</li>
+        <li><strong>Bachelor’s Degree in Computer Science</strong> – PUCIT (2013 – 2017) | GPA: 3.39/4.0</li>
       </ul>
     </section>
 
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <ul>
-        <li>Lead Instructor, TalentSprint, Jan 2021 – Present</li>
-        <li>Software Developer, Amazon, Jan 2020 – Jan 2021</li>
-        <li>Software Developer and Trainer, InterviewBit, May 2019 – Dec 2019</li>
-      </ul>
-    </section>
-
+    <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
-      <ul>
-        <li>Algorithms: Advanced</li>
-        <li>Computational Thinking: Advanced</li>
-        <li>Web Development: Intermediate</li>
-        <li>Machine Learning: Intermediate</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
-        <!-- Collect name input -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
-
-        <!-- Collect email input -->
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
-
-        <!-- Collect message input -->
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Your message" required></textarea>
-
-        <!-- Submit button -->
-        <button type="submit">Send</button>
-      </form>
+      <div class="skills-grid">
+        <div>
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Node.js, Express.js, MongoDB, Docker</li>
+            <li>AngularJS, Postman, RESTful APIs</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+            <li>Interpersonal Skills</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Professional Development</h3>
+          <ul>
+            <li>Continuous Learning</li>
+            <li>Certifications & Online Courses</li>
+            <li>Technical Blogging</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 Mian Basam Ahmad | Designed with ❤️ using HTML & CSS</p>
+  </footer>
 </body>
 
 </html>
