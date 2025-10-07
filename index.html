@@ -8,39 +8,88 @@
   <title>Mian Basam Ahmad - Online CV</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css" />
+x
 </head>
 
 <body>
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
   <header>
     <h1>Mian Basam Ahmad</h1>
-    <address>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:mbasamahmad@gmail.com">mbasamahmad@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> 0315-4550165</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mian-basam-ahmad" target="_blank">linkedin.com/in/mian-basam-ahmad</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/Mian-Basam-Ahmad" target="_blank">github.com/Mian-Basam-Ahmad</a></p>
-    </address>
+    <p class="tagline">Software Engineer & Instructor</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:mbasamahmad@gmail.com">mbasamahmad@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>0315-4550165</span>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/mian-basam-ahmad" target="_blank">LinkedIn</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/Mian-Basam-Ahmad" target="_blank">GitHub</a>
+      </div>
+    </div>
   </header>
 
   <main>
     <!-- Professional Summary -->
     <section id="summary">
-      <h2>Professional Summary</h2>
+      <h2><i class="fas fa-user"></i> Professional Summary</h2>
       <p>Experienced Software Engineer specializing in Node.js, MongoDB, and Express.js with a strong background in full-stack web development, academic instruction, and project leadership. Passionate about building scalable systems, improving code quality, and mentoring others to achieve excellence in software engineering.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Technical Skills</h3>
+          <ul>
+            <li>Node.js, Express.js, MongoDB</li>
+            <li>Docker, AngularJS, Postman</li>
+            <li>RESTful APIs, WebSocket</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-users"></i> Soft Skills</h3>
+          <ul>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+            <li>Interpersonal Skills</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-graduation-cap"></i> Professional Development</h3>
+          <ul>
+            <li>Continuous Learning</li>
+            <li>Certifications & Online Courses</li>
+            <li>Technical Blogging</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Experience -->
     <section id="experience">
-      <h2>Work Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
       <div class="job">
-        <h3>Software Engineer - Educative</h3>
-        <p class="date">July 2021 – Present</p>
+        <h3>Software Engineer</h3>
+        <p class="company">Educative</p>
+        <span class="date">July 2021 – Present</span>
         <ul>
           <li>Led Node.js development for large-scale enterprise applications using MongoDB and Express.js.</li>
           <li>Enhanced system stability by resolving critical bugs and implementing new features.</li>
@@ -50,8 +99,9 @@
       </div>
 
       <div class="job">
-        <h3>Software Engineer - SolutionInn</h3>
-        <p class="date">2016 – 2017</p>
+        <h3>Software Engineer</h3>
+        <p class="company">SolutionInn</p>
+        <span class="date">2016 – 2017</span>
         <ul>
           <li>Implemented PDF viewing features and optimized admin panels for improved UX.</li>
           <li>Collaborated with stakeholders to improve website performance and usability.</li>
@@ -59,8 +109,9 @@
       </div>
 
       <div class="job">
-        <h3>Lecturer and Lab Instructor - PUCIT, FAST NUCES, UMT</h3>
-        <p class="date">2016 – 2021</p>
+        <h3>Lecturer and Lab Instructor</h3>
+        <p class="company">PUCIT, FAST NUCES, UMT</p>
+        <span class="date">2016 – 2021</span>
         <ul>
           <li>Taught Data Structures, OOP, Database Systems, and Web Development courses.</li>
           <li>Guided students through coding exercises, debugging, and practical implementation.</li>
@@ -70,50 +121,31 @@
 
     <!-- Projects -->
     <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Movie Review Website:</strong> A Node.js web app allowing users to rate and comment on movies. Integrated MongoDB for data storage.</li>
-        <li><strong>Chat Application:</strong> Real-time chat app using Node.js and WebSocket for instant communication.</li>
-        <li><strong>Constructo:</strong> A house construction estimation app that calculates cost and material requirements from user input and 2D maps.</li>
-      </ul>
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <div class="project-item">
+        <strong>Movie Review Website</strong>
+        <p>A Node.js web app allowing users to rate and comment on movies. Integrated MongoDB for data storage.</p>
+      </div>
+      <div class="project-item">
+        <strong>Chat Application</strong>
+        <p>Real-time chat app using Node.js and WebSocket for instant communication.</p>
+      </div>
+      <div class="project-item">
+        <strong>Constructo</strong>
+        <p>A house construction estimation app that calculates cost and material requirements from user input and 2D maps.</p>
+      </div>
     </section>
 
     <!-- Education -->
     <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>MSCS</strong> – FAST NUCES (2018 – 2020) | GPA: 3.5/4.0</li>
-        <li><strong>Bachelor’s Degree in Computer Science</strong> – PUCIT (2013 – 2017) | GPA: 3.39/4.0</li>
-      </ul>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Technical Skills</h3>
-          <ul>
-            <li>Node.js, Express.js, MongoDB, Docker</li>
-            <li>AngularJS, Postman, RESTful APIs</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Problem Solving</li>
-            <li>Time Management</li>
-            <li>Interpersonal Skills</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Professional Development</h3>
-          <ul>
-            <li>Continuous Learning</li>
-            <li>Certifications & Online Courses</li>
-            <li>Technical Blogging</li>
-          </ul>
-        </div>
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-item">
+        <strong>MSCS</strong>
+        <p class="education-details">FAST NUCES (2018 – 2020) | GPA: 3.5/4.0</p>
+      </div>
+      <div class="education-item">
+        <strong>Bachelor's Degree in Computer Science</strong>
+        <p class="education-details">PUCIT (2013 – 2017) | GPA: 3.39/4.0</p>
       </div>
     </section>
   </main>
@@ -121,6 +153,77 @@
   <footer>
     <p>© 2025 Mian Basam Ahmad | Designed with ❤️ using HTML & CSS</p>
   </footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or respect OS preference
+    const savedTheme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    // Apply the saved theme
+    if (savedTheme === 'dark') {
+      document.documentElement.style.setProperty('--text-dark', '#f1f5f9');
+      document.documentElement.style.setProperty('--text-body', '#cbd5e1');
+      document.documentElement.style.setProperty('--text-muted', '#94a3b8');
+      document.documentElement.style.setProperty('--bg-page', '#0f172a');
+      document.documentElement.style.setProperty('--bg-surface', '#1e293b');
+      document.documentElement.style.setProperty('--border-color', '#334155');
+      themeIcon.className = 'fas fa-sun';
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.style.getPropertyValue('--bg-page') === '#0f172a';
+      
+      if (isDark) {
+        // Switch to light theme
+        document.documentElement.style.removeProperty('--text-dark');
+        document.documentElement.style.removeProperty('--text-body');
+        document.documentElement.style.removeProperty('--text-muted');
+        document.documentElement.style.removeProperty('--bg-page');
+        document.documentElement.style.removeProperty('--bg-surface');
+        document.documentElement.style.removeProperty('--border-color');
+        themeIcon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+      } else {
+        // Switch to dark theme
+        document.documentElement.style.setProperty('--text-dark', '#f1f5f9');
+        document.documentElement.style.setProperty('--text-body', '#cbd5e1');
+        document.documentElement.style.setProperty('--text-muted', '#94a3b8');
+        document.documentElement.style.setProperty('--bg-page', '#0f172a');
+        document.documentElement.style.setProperty('--bg-surface', '#1e293b');
+        document.documentElement.style.setProperty('--border-color', '#334155');
+        themeIcon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Add scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  </script>
 </body>
 
 </html>
