@@ -1,465 +1,273 @@
+/* style.css - Minimalistic Responsive CV Styles */
 
-/* ===== 1. CSS Variables for Theming ===== */
+/* Theme color variables */
 :root {
-  /* Colors */
-  --primary-color: #2563eb;     /* Modern blue accent */
-  --primary-light: #dbeafe;     /* Light blue for backgrounds */
-  --primary-dark: #1d4ed8;      /* Darker blue for hover states */
-  --text-dark: #1e293b;         /* For Headings */
-  --text-body: #334155;         /* For body text */
-  --text-muted: #64748b;        /* For Dates, Address */
-  --bg-page: #f8fafc;           /* Light background */
-  --bg-surface: #ffffff;        /* Card/Section background */
-  --accent-color: #f59e0b;      /* Accent color for highlights */
-  --border-color: #e2e8f0;      /* Border color */
-  
-  /* Spacing & Radius */
-  --space-unit: 1rem;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
-  /* Transitions */
-  --transition-fast: 0.2s ease-out;
-  --transition-normal: 0.3s ease-out;
+  --text-dark: #111827;
+  --text-body: #4b5563;
+  --text-muted: #6b7280;
+  --bg-page: #ffffff;
+  --bg-surface: #f9fafb;
+  --border-color: #e5e7eb;
+  --accent-color: #3b82f6; /* Accent color (blue) */
 }
 
-/* Dark mode variables */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-dark: #f1f5f9;
-    --text-body: #cbd5e1;
-    --text-muted: #94a3b8;
-    --bg-page: #0f172a;
-    --bg-surface: #1e293b;
-    --border-color: #334155;
-  }
-}
-
-/* ===== 2. Global Reset and Body ===== */
+/* Reset and global styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   background-color: var(--bg-page);
-  color: var(--text-body);
-  padding: 30px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  color: var(--text-dark);
 }
 
-/* ===== 3. Header & Contact Info (Emphasis) ===== */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #2563eb;
+}
+
+/* Header */
 header {
+  padding: 20px;
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 2.5rem 1rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: white;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  overflow: hidden;
 }
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--accent-color);
-}
-
 header h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  color: var(--text-dark);
 }
-
-.tagline {
+header .tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--text-muted);
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .contact-info {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
 }
-
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  transition: transform var(--transition-fast);
+  gap: 8px;
 }
-
-.contact-item:hover {
-  transform: translateY(-2px);
-}
-
-.contact-item a {
-  color: white;
-  text-decoration: none;
-}
-
 .contact-item i {
   color: var(--accent-color);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-
-/* ===== 4. Main Section Containers ===== */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-}
-
-section {
-  background: var(--bg-surface);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  margin-bottom: 0;
-  box-shadow: var(--shadow-md);
-  border-left: 4px solid transparent;
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-left-color: var(--primary-color);
-}
-
-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-normal);
-}
-
-section:hover::before {
-  transform: scaleX(1);
-}
-
-/* ===== 5. Headings and Subheadings ===== */
-h2 {
-  color: var(--text-dark);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-h2 i {
-  color: var(--primary-color);
-}
-
-.job {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.job:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.job h3 {
-  color: var(--primary-color);
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-.job .company {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.job .date {
+.contact-item a {
   font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  display: block;
-  background: var(--primary-light);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  display: inline-block;
-  font-weight: 500;
-}
-
-/* ===== 6. Lists and Skills Grid ===== */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  position: relative;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-}
-
-li::before {
-  content: "▸";
-  color: var(--primary-color);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* Skills grid styling */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-category {
-  background: var(--bg-page);
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
-}
-
-.skill-category:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
-}
-
-.skill-category h3 {
   color: var(--text-dark);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
-
-.skill-category h3 i {
-  color: var(--primary-color);
-}
-
-.skill-category ul li {
-  margin-bottom: 0.5rem;
-  padding-left: 1.25rem;
-}
-
-.skill-category ul li::before {
-  content: "•";
+.contact-item a:hover {
   color: var(--accent-color);
 }
 
-/* ===== 7. Projects Section ===== */
-.project-item {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
 }
-
-.project-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.project-item strong {
+.theme-toggle i {
   color: var(--text-dark);
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.theme-toggle:hover {
+  background: var(--bg-page);
 }
 
-/* ===== 8. Education Section ===== */
-.education-item {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+/* Main container */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.education-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+/* Section styles */
+section {
+  margin: 50px 0;
+  /* Initial opacity/transform can be set by JS for scroll animation */
 }
 
-.education-item strong {
+/* Section Headings */
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
   color: var(--text-dark);
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 1.1rem;
+  position: relative;
+  margin-bottom: 15px;
+}
+section h2 i {
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
 }
 
-.education-details {
+/* Summary section */
+#summary p {
+  margin-top: 10px;
+}
+
+/* Skills section */
+.skills-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.skill-category {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.skill-category h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+.skill-category h3 i {
+  margin-right: 8px;
+}
+.skill-category ul {
+  list-style: none;
+  padding-left: 0;
+}
+.skill-category ul li {
+  margin-bottom: 6px;
+}
+
+/* Work Experience */
+.job {
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 3px solid var(--accent-color);
+}
+.job h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+.job .company {
+  font-size: 0.9rem;
+  font-style: italic;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.job .date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-body);
+  margin-bottom: 10px;
+}
+.job ul {
+  list-style: disc inside;
+  margin-left: 1rem;
+}
+.job ul li {
+  margin-bottom: 5px;
 }
 
-/* ===== 9. Footer ===== */
+/* Projects */
+.project-item {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.project-item strong {
+  color: var(--accent-color);
+  font-family: 'Montserrat', sans-serif;
+}
+.project-item p {
+  margin-top: 5px;
+  color: var(--text-body);
+}
+
+/* Education */
+.education-item {
+  margin-bottom: 15px;
+}
+.education-item strong {
+  color: var(--accent-color);
+  font-family: 'Montserrat', sans-serif;
+}
+.education-details {
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+  padding: 20px 0;
   font-size: 0.9rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border-color);
+  margin-top: 50px;
 }
 
-/* ===== 10. Theme Toggle ===== */
-.theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow-lg);
-  z-index: 100;
-  transition: all var(--transition-normal);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  background: var(--primary-dark);
-}
-
-/* ===== 11. Print Optimization ===== */
-@media print {
-  body {
-    background-color: white !important;
-    padding: 0;
-    max-width: none;
-    margin: 0;
-  }
-  
-  .theme-toggle {
-    display: none;
-  }
-  
-  main section {
-    box-shadow: none !important;
-    border: 1px solid #eee;
-    border-left: 4px solid var(--primary-color);
-    border-radius: 0;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    page-break-inside: avoid;
-  }
-  
-  a {
-    text-decoration: none !important;
-  }
-  
-  footer {
-    display: none;
-  }
-}
-
-/* ===== 12. Responsive Adjustments ===== */
+/* Responsive design (mobile) */
 @media (max-width: 768px) {
-  body {
-    padding: 15px 10px;
+  .skills-grid {
+    flex-direction: column;
   }
-  
-  header {
-    padding: 1.5rem 1rem;
-  }
-  
-  header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .tagline {
-    font-size: 1.1rem;
-  }
-  
   .contact-info {
     flex-direction: column;
-    gap: 1rem;
   }
-  
-  section {
-    padding: 1.5rem;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-  
-  .tagline {
+  header .tagline {
     font-size: 1rem;
   }
-  
-  section {
-    padding: 1.25rem;
+  .job {
+    padding-left: 10px;
   }
-  
-  h2 {
-    font-size: 1.3rem;
+  .job .date {
+    text-align: left;
+    margin-bottom: 10px;
   }
 }
