@@ -46,7 +46,7 @@ The CV includes:
 
 ## 📁 Project Structure
 -- index.html \
--- styles.css \
+-- styles.css 
 
 
 ---
@@ -73,7 +73,7 @@ Follow these steps to deploy your CV online:
 
 ## Note: your website is available at
 
-https://<your-username>.github.io/<repository-name>/
+`https://<your-username>.github.io/<repository-name>/`
 
 
 
