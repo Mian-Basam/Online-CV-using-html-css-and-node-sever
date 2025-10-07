@@ -1,101 +1,220 @@
-/* Reset */
+/*
+ * =================================================================
+ * PROFESSIONAL CV TEMPLATE STYLESHEET
+ * Enhancements: Variables, Visual Hierarchy, Micro-Interactions
+ * =================================================================
+ */
+
+/* ===== 1. CSS Variables for Theming ===== */
+:root {
+  /* Colors */
+  --primary-color: #0077cc;     /* Deep Blue Accent (Links, Borders) */
+  --primary-light: #e6f3ff;     /* Very light blue for subtle background/highlights */
+  --text-dark: #2c3e50;         /* For Headings, H1 */
+  --text-body: #333;
+  --text-muted: #6c757d;        /* For Dates, Address */
+  --bg-page: #f4f6f9;           /* Light background */
+  --bg-surface: #ffffff;        /* Card/Section background */
+  
+  /* Spacing & Radius */
+  --space-unit: 1rem;
+  --radius-md: 10px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease-out;
+}
+
+/* ===== 2. Global Reset and Body ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Apply a default transition for smooth hover effects */
+  transition: all var(--transition-fast);
 }
 
-/* Body */
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  background-color: #f4f6f9;
-  color: #333;
-  padding: 20px;
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  padding: 30px 20px; /* Increased padding */
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Header */
+/* ===== 3. Header & Contact Info (Emphasis) ===== */
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: var(--space-unit);
+  /* Subtly separate header from content */
+  border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
-  color: #2c3e50;
+  font-size: 2.5rem; /* Slightly larger */
+  color: var(--text-dark);
+  font-weight: 800; /* Bolder name */
+  letter-spacing: -0.5px;
 }
 
 address {
   font-style: normal;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
+  line-height: 1.4;
 }
 
 address p {
   margin: 4px 0;
-  color: #555;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 a {
-  color: #0077cc;
+  color: var(--primary-color);
   text-decoration: none;
+  font-weight: 500;
 }
 
+/* 💡 Interactive: Subtle underline on hover */
 a:hover {
   text-decoration: underline;
+  color: var(--text-dark); /* Darken text on hover for contrast */
 }
 
-/* Section Headings */
-h2 {
-  color: #1a1a1a;
-  border-bottom: 2px solid #0077cc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  font-family: "Montserrat", sans-serif;
-}
-
+/* ===== 4. Main Section Containers (The Card Style) ===== */
 main section {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background: var(--bg-surface);
+  padding: 2rem; /* Increased padding */
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Stronger, professional shadow */
+  border-left: 5px solid transparent; /* Prepare for border interaction */
 }
 
-/* Job entries */
-.job {
-  margin-bottom: 1.2rem;
+/* 💡 Interactive: Highlight section on hover */
+main section:hover {
+  border-left-color: var(--primary-color);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Lift and deepen shadow */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+/* ===== 5. Headings and Subheadings ===== */
+h2 {
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px; /* More space */
+  margin-bottom: 1.5rem; /* More space */
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
 .job h3 {
-  color: #0077cc;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.job .company {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
 .job .date {
   font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
 }
 
+/* ===== 6. Lists and Skills Grid ===== */
 ul {
-  list-style-type: disc;
-  margin-left: 20px;
+  list-style-type: none; /* Removed default disc */
+  margin: 0;
+  padding: 0;
 }
 
-/* Skills grid */
+li {
+  position: relative;
+  margin-bottom: 0.6rem;
+  padding-left: 1.5rem;
+}
+
+/* Custom bullet point for modern look */
+li::before {
+  content: "•"; /* Use a solid dot or arrow */
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Skills grid styling */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem; /* Smaller gap */
 }
 
-/* Footer */
+.skill-item {
+  background-color: var(--primary-light);
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+}
+
+/* 💡 Interactive: Skill item subtle press effect */
+.skill-item:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 7. Footer (Subtlety) ===== */
 footer {
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #666;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid #eee;
+}
+
+/* ===== 8. Print Optimization (Essential for CVs) ===== */
+@media print {
+  body {
+    background-color: white !important;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+  }
+  
+  main section {
+    box-shadow: none !important;
+    border: 1px solid #eee; /* Light border for separation */
+    border-left: 5px solid var(--primary-color); /* Keep the accent color */
+    border-radius: 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  
+  a {
+    text-decoration: none !important; /* Don't print distracting underlines */
+  }
+  
+  footer {
+    display: none; /* Hide footer to save space */
+  }
 }
