@@ -1,1 +1,118 @@
-
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #f4f6f9;
+    color: #333;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  address {
+    font-style: normal;
+    color: #555;
+  }
+  
+  address a {
+    color: #0077b5; /* LinkedIn blue */
+    text-decoration: none;
+  }
+  
+  address a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section headings */
+  main h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0077b5;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+  }
+  
+  /* Lists */
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  /* Projects links */
+  #projects a {
+    color: #0077b5;
+    text-decoration: none;
+  }
+  
+  #projects a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contact Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  button {
+    background: #0077b5;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #005582;
+  }
+  
