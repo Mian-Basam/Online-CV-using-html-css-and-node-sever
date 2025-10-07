@@ -1,27 +1,43 @@
-/*
- * =================================================================
- * PROFESSIONAL CV TEMPLATE STYLESHEET
- * Enhancements: Variables, Visual Hierarchy, Micro-Interactions
- * =================================================================
- */
 
 /* ===== 1. CSS Variables for Theming ===== */
 :root {
   /* Colors */
-  --primary-color: #0077cc;     /* Deep Blue Accent (Links, Borders) */
-  --primary-light: #e6f3ff;     /* Very light blue for subtle background/highlights */
-  --text-dark: #2c3e50;         /* For Headings, H1 */
-  --text-body: #333;
-  --text-muted: #6c757d;        /* For Dates, Address */
-  --bg-page: #f4f6f9;           /* Light background */
+  --primary-color: #2563eb;     /* Modern blue accent */
+  --primary-light: #dbeafe;     /* Light blue for backgrounds */
+  --primary-dark: #1d4ed8;      /* Darker blue for hover states */
+  --text-dark: #1e293b;         /* For Headings */
+  --text-body: #334155;         /* For body text */
+  --text-muted: #64748b;        /* For Dates, Address */
+  --bg-page: #f8fafc;           /* Light background */
   --bg-surface: #ffffff;        /* Card/Section background */
+  --accent-color: #f59e0b;      /* Accent color for highlights */
+  --border-color: #e2e8f0;      /* Border color */
   
   /* Spacing & Radius */
   --space-unit: 1rem;
-  --radius-md: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
   /* Transitions */
   --transition-fast: 0.2s ease-out;
+  --transition-normal: 0.3s ease-out;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-dark: #f1f5f9;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --bg-page: #0f172a;
+    --bg-surface: #1e293b;
+    --border-color: #334155;
+  }
 }
 
 /* ===== 2. Global Reset and Body ===== */
@@ -29,8 +45,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Apply a default transition for smooth hover effects */
-  transition: all var(--transition-fast);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,91 +56,170 @@ body {
   line-height: 1.6;
   background-color: var(--bg-page);
   color: var(--text-body);
-  padding: 30px 20px; /* Increased padding */
-  max-width: 900px;
+  padding: 30px 20px;
+  max-width: 1100px;
   margin: 0 auto;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 /* ===== 3. Header & Contact Info (Emphasis) ===== */
 header {
   text-align: center;
-  margin-bottom: 2.5rem;
-  padding-bottom: var(--space-unit);
-  /* Subtly separate header from content */
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 3rem;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
 }
 
 header h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem; /* Slightly larger */
-  color: var(--text-dark);
-  font-weight: 800; /* Bolder name */
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
-address {
-  font-style: normal;
-  margin-top: 1rem;
-  line-height: 1.4;
-}
-
-address p {
-  margin: 4px 0;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
   font-weight: 500;
 }
 
-/* 💡 Interactive: Subtle underline on hover */
-a:hover {
-  text-decoration: underline;
-  color: var(--text-dark); /* Darken text on hover for contrast */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-/* ===== 4. Main Section Containers (The Card Style) ===== */
-main section {
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-item i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+/* ===== 4. Main Section Containers ===== */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+section {
   background: var(--bg-surface);
-  padding: 2rem; /* Increased padding */
+  padding: 2rem;
   border-radius: var(--radius-md);
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Stronger, professional shadow */
-  border-left: 5px solid transparent; /* Prepare for border interaction */
+  margin-bottom: 0;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid transparent;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
 }
 
-/* 💡 Interactive: Highlight section on hover */
-main section:hover {
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
   border-left-color: var(--primary-color);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Lift and deepen shadow */
-  transform: translateY(-2px); /* Subtle lift */
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+section:hover::before {
+  transform: scaleX(1);
 }
 
 /* ===== 5. Headings and Subheadings ===== */
 h2 {
   color: var(--text-dark);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 8px; /* More space */
-  margin-bottom: 1.5rem; /* More space */
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+h2 i {
+  color: var(--primary-color);
+}
+
+.job {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .job h3 {
   color: var(--primary-color);
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 .job .company {
   font-size: 1.1rem;
   color: var(--text-dark);
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .job .date {
@@ -130,24 +227,28 @@ h2 {
   color: var(--text-muted);
   margin-bottom: 1rem;
   display: block;
+  background: var(--primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 500;
 }
 
 /* ===== 6. Lists and Skills Grid ===== */
 ul {
-  list-style-type: none; /* Removed default disc */
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 li {
   position: relative;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
   padding-left: 1.5rem;
 }
 
-/* Custom bullet point for modern look */
 li::before {
-  content: "•"; /* Use a solid dot or arrow */
+  content: "▸";
   color: var(--primary-color);
   font-weight: bold;
   display: inline-block;
@@ -162,37 +263,126 @@ li::before {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.8rem; /* Smaller gap */
+  gap: 1.5rem;
 }
 
-.skill-item {
-  background-color: var(--primary-light);
+.skill-category {
+  background: var(--bg-page);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.skill-category:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-category h3 {
   color: var(--text-dark);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   font-weight: 600;
-  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* 💡 Interactive: Skill item subtle press effect */
-.skill-item:active {
-  transform: scale(0.98);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+.skill-category h3 i {
+  color: var(--primary-color);
 }
 
-/* ===== 7. Footer (Subtlety) ===== */
+.skill-category ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.skill-category ul li::before {
+  content: "•";
+  color: var(--accent-color);
+}
+
+/* ===== 7. Projects Section ===== */
+.project-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-item strong {
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ===== 8. Education Section ===== */
+.education-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.education-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.education-item strong {
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.education-details {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== 9. Footer ===== */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin-top: 3rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
 }
 
-/* ===== 8. Print Optimization (Essential for CVs) ===== */
+/* ===== 10. Theme Toggle ===== */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--primary-dark);
+}
+
+/* ===== 11. Print Optimization ===== */
 @media print {
   body {
     background-color: white !important;
@@ -201,20 +391,75 @@ footer {
     margin: 0;
   }
   
+  .theme-toggle {
+    display: none;
+  }
+  
   main section {
     box-shadow: none !important;
-    border: 1px solid #eee; /* Light border for separation */
-    border-left: 5px solid var(--primary-color); /* Keep the accent color */
+    border: 1px solid #eee;
+    border-left: 4px solid var(--primary-color);
     border-radius: 0;
     margin-bottom: 1rem;
     padding: 1rem;
+    page-break-inside: avoid;
   }
   
   a {
-    text-decoration: none !important; /* Don't print distracting underlines */
+    text-decoration: none !important;
   }
   
   footer {
-    display: none; /* Hide footer to save space */
+    display: none;
+  }
+}
+
+/* ===== 12. Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 15px 10px;
+  }
+  
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .tagline {
+    font-size: 1.1rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  section {
+    padding: 1.25rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
   }
 }
