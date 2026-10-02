@@ -45,8 +45,11 @@ The CV includes:
 ---
 
 ## 📁 Project Structure
--- index.html \
--- styles.css 
+
+```
+├── index.html
+└── styles.css
+```
 
 
 ---
@@ -55,7 +58,10 @@ The CV includes:
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/Mian-Basam.github.io/Online-CV-using-html-css-and-node-sever.git
+   git clone https://github.com/Mian-Basam/Online-CV-using-html-css-and-node-sever.git
+   ```
+
+2. **Open `index.html`** in your browser, or edit the sections to make it your own.
 
 ## 🌍 Deployment on GitHub Pages
 
@@ -70,10 +76,9 @@ Follow these steps to deploy your CV online:
    🔗 [https://mian-basam.github.io/Online-CV-using-html-css-and-node-sever/](https://mian-basam.github.io/Online-CV-using-html-css-and-node-sever/)
 
 
+## 📄 License
 
-## Note: your website is available at
-
-`https://<your-username>.github.io/<repository-name>/`
+[MIT](LICENSE)
 
 
 
