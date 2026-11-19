@@ -1,159 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Online CV of Mian Basam Ahmad - Software Engineer and Instructor." />
-    <title>Mian Basam Ahmad - Online CV</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mian Basam Ahmad - Software Engineer at Educative. Full-stack, DevOps and AI tooling. CV and project portfolio.">
+    <title>Mian Basam Ahmad | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <div class="container">
-        <header class="header">
-            <h1 class="name">Mian Basam Ahmad</h1>
-            <p class="tagline">Software Engineer & Instructor</p>
-
-            <div class="contact">
-                <a href="mailto:mbasamahmad@gmail.com"><i class="fas fa-envelope"></i> mbasamahmad@gmail.com</a>
-                <a href="tel:+923154550165"><i class="fas fa-phone"></i> 0315-4550165</a>
-                <a href="https://www.linkedin.com/in/mian-basam-ahmad" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/Mian-Basam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo">MBA<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
             </div>
-        </header>
+            <div class="nav-actions">
+                <button class="icon-btn" id="printBtn" aria-label="Print or save as PDF" title="Print / save as PDF"><i class="fas fa-print"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
 
-        <main>
-            <section class="section" id="summary">
-                <h2><i class="fas fa-user"></i> Professional Summary</h2>
-                <p>
-                    Experienced Software Engineer specializing in Node.js, MongoDB, and Express.js with a strong background in
-                    full-stack web development, academic instruction, and project leadership. Passionate about scalable systems,
-                    clean architecture, and mentoring aspiring engineers.
-                </p>
-            </section>
-
-            <section class="section" id="skills">
-                <h2><i class="fas fa-tools"></i> Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill">
-                        <h3><i class="fas fa-code"></i> Technical</h3>
-                        <ul>
-                            <li>Node.js, Express.js, MongoDB</li>
-                            <li>Docker, AngularJS, Postman</li>
-                            <li>RESTful APIs, WebSocket</li>
-                        </ul>
-                    </div>
-                    <div class="skill">
-                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
-                        <ul>
-                            <li>Problem Solving</li>
-                            <li>Time Management</li>
-                            <li>Interpersonal Skills</li>
-                        </ul>
-                    </div>
-                    <div class="skill">
-                        <h3><i class="fas fa-graduation-cap"></i> Professional Development</h3>
-                        <ul>
-                            <li>Continuous Learning</li>
-                            <li>Certifications & Online Courses</li>
-                            <li>Technical Blogging</li>
-                        </ul>
-                    </div>
+    <header class="hero" id="top">
+        <div class="container hero-inner">
+            <div class="avatar" aria-hidden="true">MB</div>
+            <div>
+                <p class="eyebrow">Software Engineer @ Educative</p>
+                <h1>Mian Basam Ahmad</h1>
+                <p class="lead">I build web platforms, AI-powered content tools and the infrastructure that ships them: full-stack apps, LLM pipelines, CI/CD and observability. Former university lecturer with five years of teaching Computer Science.</p>
+                <div class="hero-links">
+                    <a class="btn btn-primary" href="mailto:mbasamahmad@gmail.com"><i class="fas fa-envelope"></i> Email me</a>
+                    <a class="btn" href="https://www.linkedin.com/in/mian-basam-ahmad" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a class="btn" href="https://github.com/Mian-Basam" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
                 </div>
-            </section>
+                <ul class="meta">
+                    <li><i class="fas fa-phone"></i> <a href="tel:+923154550165">+92 315 4550165</a></li>
+                    <li><i class="fas fa-briefcase"></i> 9+ years in software &amp; teaching</li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
-            <section class="section" id="experience">
-                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+    <main class="container">
+        <section class="section" id="about">
+            <h2 class="section-title"><span>01</span> About</h2>
+            <div class="about-grid">
+                <p>Software Engineer at <strong>Educative</strong> since 2021. I work across the stack: Node.js and Next.js applications, AI pipelines that generate and review courses, blogs and practice questions, and automation that saves teams hours of manual work. On the infrastructure side I build with Docker, Kubernetes, Ansible, Jenkins and GitHub Actions, and monitor with Prometheus and Grafana.</p>
+                <div class="stats">
+                    <div class="stat"><strong>13</strong><span>public projects</span></div>
+                    <div class="stat"><strong>5+</strong><span>years at Educative</span></div>
+                    <div class="stat"><strong>5</strong><span>years teaching CS</span></div>
+                </div>
+            </div>
+        </section>
 
-                <div class="job">
-                    <h3>Software Engineer — <span class="company">Educative</span></h3>
-                    <p class="date">July 2021 – Present</p>
+        <section class="section" id="experience">
+            <h2 class="section-title"><span>02</span> Experience</h2>
+            <div class="timeline">
+                <article class="role">
+                    <div class="role-head">
+                        <h3>Software Engineer <span class="at">· Educative</span></h3>
+                        <span class="date">Jul 2021 – Present</span>
+                    </div>
                     <ul>
+                        <li>Build web platforms and AI-powered tools for technical learning: course and content pipelines, internal automation and developer-facing web apps.</li>
                         <li>Led Node.js backend development for enterprise applications using MongoDB and Express.js.</li>
                         <li>Resolved high-priority bugs and optimized database queries to improve stability.</li>
-                        <li>Collaborated in Agile sprints and improved project communication through daily stand-ups.</li>
+                        <li>Built Playwright-based checks and scripts that replace hours of manual QA work.</li>
                     </ul>
-                </div>
-
-                <div class="job">
-                    <h3>Software Engineer — <span class="company">SolutionInn</span></h3>
-                    <p class="date">2016 – 2017</p>
+                </article>
+                <article class="role">
+                    <div class="role-head">
+                        <h3>Lecturer &amp; Lab Instructor <span class="at">· PUCIT, FAST, UMT</span></h3>
+                        <span class="date">2016 – 2021</span>
+                    </div>
                     <ul>
-                        <li>Implemented PDF viewing and admin panel optimization for enhanced UX.</li>
-                        <li>Improved overall website performance and functionality through data-driven insights.</li>
+                        <li>Taught Data Structures, OOP, Database Systems and Web Development.</li>
+                        <li>Guided students in debugging and building full-stack applications.</li>
                     </ul>
-                </div>
-
-                <div class="job">
-                    <h3>Lecturer & Lab Instructor — <span class="company">PUCIT / FAST / UMT</span></h3>
-                    <p class="date">2016 – 2021</p>
+                </article>
+                <article class="role">
+                    <div class="role-head">
+                        <h3>Software Engineer <span class="at">· SolutionInn</span></h3>
+                        <span class="date">2016 – 2017</span>
+                    </div>
                     <ul>
-                        <li>Taught Data Structures, OOP, Database Systems, and Web Development courses.</li>
-                        <li>Guided students in debugging and developing full-stack applications.</li>
+                        <li>Implemented PDF viewing and optimized the admin panel for a better user experience.</li>
+                        <li>Improved website performance and functionality using data-driven insights.</li>
                     </ul>
-                </div>
-            </section>
+                </article>
+            </div>
+        </section>
 
-            <section class="section" id="projects">
-                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-                <div class="project">
-                    <h3>🎬 Movie Review Website</h3>
-                    <p>A Node.js app allowing users to rate and review movies with MongoDB for data storage.</p>
-                </div>
-                <div class="project">
-                    <h3>💬 Chat Application</h3>
-                    <p>Real-time messaging app built with WebSocket and Node.js for instant communication.</p>
-                </div>
-                <div class="project">
-                    <h3>🏗️ Constructo</h3>
-                    <p>Construction estimation tool that calculates costs and materials based on 2D maps.</p>
-                </div>
-            </section>
+        <section class="section" id="projects">
+            <h2 class="section-title"><span>03</span> Projects</h2>
+            <div class="filters" role="tablist" aria-label="Filter projects">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="devops">DevOps &amp; Infra</button>
+                <button class="chip" data-filter="web">Full-stack</button>
+                <button class="chip" data-filter="ai">AI &amp; Automation</button>
+            </div>
+            <div class="projects" id="projectGrid"></div>
+            <p class="more">More on <a href="https://github.com/Mian-Basam?tab=repositories" target="_blank" rel="noopener">github.com/Mian-Basam <i class="fas fa-arrow-up-right-from-square"></i></a></p>
+        </section>
 
-            <section class="section" id="education">
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <ul class="education-list">
-                    <li><strong>MSCS</strong> — FAST NUCES (2018–2020) | GPA: 3.5/4.0</li>
-                    <li><strong>BSCS</strong> — PUCIT (2013–2017) | GPA: 3.39/4.0</li>
-                </ul>
-            </section>
-        </main>
+        <section class="section" id="skills">
+            <h2 class="section-title"><span>04</span> Skills</h2>
+            <div class="skills">
+                <div class="skill-group"><h3><i class="fas fa-code"></i> Languages</h3><div class="tags"><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Bash</span><span>Kotlin</span><span>SQL</span></div></div>
+                <div class="skill-group"><h3><i class="fas fa-layer-group"></i> Web</h3><div class="tags"><span>Node.js</span><span>Express</span><span>Next.js</span><span>React</span><span>Flask</span><span>MongoDB</span><span>PostgreSQL</span><span>REST</span><span>WebSocket</span></div></div>
+                <div class="skill-group"><h3><i class="fas fa-server"></i> DevOps</h3><div class="tags"><span>Docker</span><span>Kubernetes</span><span>Ansible</span><span>Jenkins</span><span>GitHub Actions</span><span>Nginx</span><span>Prometheus</span><span>Grafana</span><span>Linux</span></div></div>
+                <div class="skill-group"><h3><i class="fas fa-robot"></i> AI &amp; Automation</h3><div class="tags"><span>LLM pipelines</span><span>Prompt engineering</span><span>OpenAI API</span><span>OpenCV</span><span>Playwright</span></div></div>
+            </div>
+        </section>
 
-        <footer class="footer">
-            <p>© 2025 Mian Basam Ahmad — Built with ❤️ using HTML & CSS</p>
-        </footer>
-    </div>
+        <section class="section" id="education">
+            <h2 class="section-title"><span>05</span> Education</h2>
+            <div class="edu">
+                <div class="edu-item"><i class="fas fa-graduation-cap"></i><div><h3>MS Computer Science</h3><p>FAST NUCES · 2018 – 2020 · GPA 3.5 / 4.0</p></div></div>
+                <div class="edu-item"><i class="fas fa-graduation-cap"></i><div><h3>BS Computer Science</h3><p>PUCIT · 2013 – 2017 · GPA 3.39 / 4.0</p></div></div>
+            </div>
+        </section>
+
+        <section class="contact-card">
+            <h2>Let's work together</h2>
+            <p>Open to conversations about full-stack, DevOps and AI tooling roles.</p>
+            <a class="btn btn-primary" href="mailto:mbasamahmad@gmail.com"><i class="fas fa-envelope"></i> mbasamahmad@gmail.com</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year">2026</span> Mian Basam Ahmad · Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages</p>
+    </footer>
 
     <script>
-        const themeToggle = document.getElementById("themeToggle");
-        const icon = themeToggle.querySelector("i");
+        const GH = "https://github.com/Mian-Basam/";
+        const projects = [
+            { repo: "devops-portfolio", name: "DevOps Portfolio", cat: "devops", icon: "fa-cubes", featured: true,
+              desc: "Five hands-on DevOps projects, from Linux scripting to CI/CD on Kubernetes, each with a one-command install and run.",
+              tags: ["Bash", "Docker", "Ansible", "Kubernetes", "CI/CD"] },
+            { repo: "payflow-devops-pipeline", name: "PayFlow CI/CD Pipeline", cat: "devops", icon: "fa-code-branch", featured: true,
+              desc: "End-to-end pipeline on Jenkins, TeamCity, Bitbucket and GitHub Actions with Trivy scanning, canary deploys and automatic rollback.",
+              tags: ["Jenkins", "GitHub Actions", "Kubernetes", "Trivy"] },
+            { repo: "observability-stack", name: "Observability Stack", cat: "devops", icon: "fa-chart-line",
+              desc: "Prometheus, Grafana, Loki, Alertmanager, Blackbox, cAdvisor and Zabbix with chaos endpoints, alert unit tests and runbooks.",
+              tags: ["Prometheus", "Grafana", "Loki", "Zabbix"] },
+            { repo: "docker-three-tier-app", name: "Docker Three-Tier App", cat: "devops", icon: "fa-docker", brand: true,
+              desc: "TaskBoard: Nginx + Flask/Gunicorn + PostgreSQL with Docker Compose secrets, healthchecks, scaling, backup/restore and e2e tests.",
+              tags: ["Docker Compose", "Flask", "PostgreSQL", "Nginx"] },
+            { repo: "ansible-infra-provisioning", name: "Ansible Infra Provisioning", cat: "devops", icon: "fa-network-wired",
+              desc: "Ansible + Vagrant lab: hardened servers, an Nginx load balancer, zero-downtime rolling updates and OS patching as code.",
+              tags: ["Ansible", "Vagrant", "Nginx", "IaC"] },
+            { repo: "linux-ops-toolkit", name: "Linux Ops Toolkit", cat: "devops", icon: "fa-terminal",
+              desc: "Production-style Bash tools for server health reports, network checks and backups, scheduled with systemd timers and tested with Bats.",
+              tags: ["Bash", "systemd", "ShellCheck", "Bats"] },
+            { repo: "Ecommerce", name: "ShopOnline", cat: "web", icon: "fa-cart-shopping", featured: true,
+              desc: "Full-stack store with products, deals, reviews, JWT auth and a cart. Next.js 15 frontend with an Express + MongoDB REST API.",
+              tags: ["Next.js", "TypeScript", "Express", "MongoDB"] },
+            { repo: "PDF_Editor", name: "PDF Editor", cat: "web", icon: "fa-file-pdf",
+              desc: "Edit PDF text, add drawings, images and signatures, and merge or reorder pages entirely in the browser. Files never leave your device.",
+              tags: ["Next.js", "React", "TypeScript", "pdf-lib"] },
+            { repo: "Mobile-Course-Educative", name: "AI Content Studio", cat: "ai", icon: "fa-wand-magic-sparkles", featured: true,
+              desc: "Multi-stage AI pipelines that generate blogs, newsletters and mobile courses, with real-time streaming and parallel image generation.",
+              tags: ["Next.js", "TypeScript", "LLM APIs"] },
+            { repo: "Chat-bot-using-openAI", name: "Flask GPT Chatbot", cat: "ai", icon: "fa-comments",
+              desc: "Flask chat app on the OpenAI API with context-aware replies and conversation history saved to SQLite.",
+              tags: ["Python", "Flask", "OpenAI", "SQLite"] },
+            { repo: "educative-docker-image-failure-testing", name: "Build Status Checker", cat: "ai", icon: "fa-list-check",
+              desc: "Read-only Playwright tool that checks custom Docker image builds across Educative course collections and writes a report.",
+              tags: ["Python", "Playwright", "Automation"] },
+            { repo: "OpenCV-Image-Processing", name: "OpenCV Image Processing Lab", cat: "ai", icon: "fa-eye",
+              desc: "Hands-on computer vision lab: core image processing concepts and 12 practical tasks with worked solutions.",
+              tags: ["Python", "OpenCV", "Jupyter"] },
+            { repo: "Prompts", name: "LLM Prompt Library", cat: "ai", icon: "fa-pen-nib",
+              desc: "Prompts for writing and reviewing persona-driven developer blogs and running Socratic AI tutors for interactive courses.",
+              tags: ["Prompt engineering", "LLMs"] }
+        ];
+        const labels = { devops: "DevOps", web: "Full-stack", ai: "AI & Automation" };
+        const grid = document.getElementById("projectGrid");
+        grid.innerHTML = projects.map(p => `
+            <a class="card${p.featured ? " featured" : ""}" data-cat="${p.cat}" href="${GH + p.repo}" target="_blank" rel="noopener">
+                <div class="card-top">
+                    <span class="card-icon"><i class="${p.brand ? "fab" : "fas"} ${p.icon}"></i></span>
+                    <span class="badge">${labels[p.cat]}</span>
+                </div>
+                <h3>${p.name}</h3>
+                <p>${p.desc}</p>
+                <div class="tags small">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+                <span class="card-link"><i class="fab fa-github"></i> ${p.repo} <i class="fas fa-arrow-right"></i></span>
+            </a>`).join("");
 
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        let isDark = localStorage.getItem("theme") === "dark" || prefersDark;
+        document.querySelectorAll(".filters .chip").forEach(btn => btn.addEventListener("click", () => {
+            document.querySelectorAll(".filters .chip").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const f = btn.dataset.filter;
+            grid.querySelectorAll(".card").forEach(c => c.hidden = f !== "all" && c.dataset.cat !== f);
+        }));
 
-        function setTheme(dark) {
-            document.body.classList.toggle("dark-theme", dark);
-            icon.className = dark ? "fas fa-sun" : "fas fa-moon";
-            localStorage.setItem("theme", dark ? "dark" : "light");
+        const toggle = document.getElementById("themeToggle");
+        const icon = toggle.querySelector("i");
+        let saved = null;
+        try { saved = localStorage.getItem("theme"); } catch (e) {}
+        let dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        function setTheme(d) {
+            document.documentElement.dataset.theme = d ? "dark" : "light";
+            icon.className = d ? "fas fa-sun" : "fas fa-moon";
+            try { localStorage.setItem("theme", d ? "dark" : "light"); } catch (e) {}
         }
-
-        setTheme(isDark);
-
-        themeToggle.addEventListener("click", () => {
-            isDark = !isDark;
-            setTheme(isDark);
-        });
+        setTheme(dark);
+        toggle.addEventListener("click", () => setTheme(dark = !dark));
+        document.getElementById("printBtn").addEventListener("click", () => window.print());
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
-
 </html>
