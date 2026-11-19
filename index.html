@@ -182,6 +182,7 @@
             ["devops", "linux-ops-toolkit", "Linux Ops Toolkit", "Bash tools for health reports, network checks and backups on systemd timers.", "Bash · systemd · Bats"],
             ["web", "Ecommerce", "ShopOnline", "Full-stack store with catalog, deals, reviews, JWT auth and cart.", "Next.js · Express · MongoDB"],
             ["web", "PDF_Editor", "PDF Editor", "Edit, annotate, sign, merge and reorder PDFs fully in the browser.", "Next.js · TypeScript · pdf-lib"],
+            ["ai", "interview-guide-generator", "Interview Guide Generator", "Multi-agent app that turns one company name into an SEO-ready interview prep pack: research agents, human-in-the-loop role picks and writer agents for every level.", "Next.js · Claude/OpenAI/Gemini · Zod"],
             ["ai", "Mobile-Course-Educative", "AI Content Studio", "LLM pipelines that write blogs, newsletters and mobile courses, with streaming.", "Next.js · LLM APIs"],
             ["ai", "Chat-bot-using-openAI", "Flask GPT Chatbot", "Context-aware chatbot with conversation history in SQLite.", "Flask · OpenAI · SQLite"],
             ["ai", "educative-docker-image-failure-testing", "Build Status Checker", "Playwright tool that checks Docker image builds across course collections.", "Python · Playwright"],
@@ -189,7 +190,7 @@
             ["ai", "Prompts", "Prompt Library", "Prompts for persona-driven tech writing, review and Socratic tutoring.", "Prompt engineering"]
         ];
         const colors = { devops: "green", web: "blue", ai: "pink" };
-        const tilts = [-2.2, 1.6, -1, 2.4, -1.8, 1.1, -2.6, 1.9, -.8, 2.1, -1.4, .9, -2];
+        const tilts = [-2.2, 1.6, -1, 2.4, -1.8, 1.1, -2.6, 1.9, -.8, 2.1, -1.4, .9, -2, 1.5];
         const cards = document.getElementById("cards");
         cards.innerHTML = P.map(([cat, repo, name, desc, stack], i) => `
             <a class="card ${colors[cat]}" data-cat="${cat}" style="--r:${tilts[i]}deg;--i:${i}" href="${GH + repo}" target="_blank" rel="noopener">
