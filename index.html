@@ -1,275 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mian Basam Ahmad - Software Engineer at Educative. Full-stack development, DevOps and AI tooling.">
+    <meta name="description" content="Mian Basam Ahmad is a Software Engineer at Educative building web platforms, AI content tools, and the infrastructure that ships them.">
+    <meta property="og:title" content="Mian Basam Ahmad | Software Engineer">
+    <meta property="og:description" content="Full-stack, DevOps and AI tooling. Software Engineer at Educative.">
     <title>Mian Basam Ahmad | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="progress" id="progress"></div>
-    <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="toolbar">
-        <button class="tool-btn" id="printBtn"><i class="fas fa-download"></i> Download PDF</button>
-        <button class="tool-btn icon" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-    </div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <a class="skip" href="#content">Skip to content</a>
 
-    <div class="page">
-        <header class="header">
+    <div class="shell">
+        <!-- ============ Left column ============ -->
+        <header class="intro">
             <div>
-                <h1 id="name">Mian Basam Ahmad</h1>
-                <p class="title">Software Engineer · <span class="rotator" id="rotator">Full-Stack Development</span><span class="caret" aria-hidden="true"></span><span class="print-only">Full-Stack, DevOps &amp; AI Tooling</span></p>
+                <h1><a href="#top">Mian Basam Ahmad</a></h1>
+                <h2 class="role">Software Engineer at Educative</h2>
+                <p class="pitch">I build web platforms, AI-powered content tools, and the infrastructure that ships them.</p>
+
+                <nav class="toc" aria-label="Sections">
+                    <ul>
+                        <li><a href="#about" data-nav="about"><span class="line"></span><span class="label">About</span></a></li>
+                        <li><a href="#experience" data-nav="experience"><span class="line"></span><span class="label">Experience</span></a></li>
+                        <li><a href="#projects" data-nav="projects"><span class="line"></span><span class="label">Projects</span></a></li>
+                        <li><a href="#skills" data-nav="skills"><span class="line"></span><span class="label">Skills</span></a></li>
+                    </ul>
+                </nav>
             </div>
-            <ul class="contact">
-                <li><i class="fas fa-envelope"></i><a href="mailto:mbasamahmad@gmail.com">mbasamahmad@gmail.com</a></li>
-                <li><i class="fas fa-phone"></i><a href="tel:+923154550165">+92 315 4550165</a></li>
-                <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/mian-basam-ahmad-68b997147/" target="_blank" rel="noopener">linkedin.com/in/mian-basam-ahmad-68b997147</a></li>
-                <li><i class="fab fa-github"></i><a href="https://github.com/Mian-Basam" target="_blank" rel="noopener">github.com/Mian-Basam</a></li>
-            </ul>
+
+            <div class="intro-foot">
+                <div class="actions">
+                    <a class="btn primary" href="mailto:mbasamahmad@gmail.com">Get in touch</a>
+                    <button class="btn" id="printBtn" type="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+                        Résumé PDF
+                    </button>
+                </div>
+                <ul class="social" aria-label="Social links">
+                    <li><a href="https://github.com/Mian-Basam" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a></li>
+                    <li><a href="https://www.linkedin.com/in/mian-basam-ahmad-68b997147/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a></li>
+                    <li><a href="mailto:mbasamahmad@gmail.com" aria-label="Email" title="mbasamahmad@gmail.com">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+                    <li><a href="tel:+923154550165" aria-label="Phone" title="+92 315 4550165">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></a></li>
+                    <li class="theme"><button id="themeToggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+                        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    </button></li>
+                </ul>
+            </div>
         </header>
 
-        <div class="layout">
-            <main class="main">
-                <section>
-                    <h2>Professional Summary</h2>
-                    <p>Software Engineer with over five years at Educative building web platforms, AI-powered content tools and the infrastructure that ships them. Experienced across the stack, from Node.js and Next.js applications to LLM pipelines, CI/CD and observability. Brings five years of university teaching in Computer Science, with a strong focus on clear engineering, documentation and mentoring.</p>
-                    <div class="stats">
-                        <div class="stat"><strong data-count="5" data-suffix="+">0</strong><span>Years at Educative</span></div>
-                        <div class="stat"><strong data-count="13">0</strong><span>Public projects</span></div>
-                        <div class="stat"><strong data-count="5">0</strong><span>Years teaching CS</span></div>
-                    </div>
-                </section>
+        <!-- ============ Right column ============ -->
+        <main id="content">
+            <section id="about" class="section" aria-label="About">
+                <h2 class="sticky-title">About</h2>
+                <p>I'm a software engineer who enjoys turning messy, manual processes into reliable systems. At <a class="em" href="https://www.educative.io" target="_blank" rel="noopener">Educative</a>, I work on the platforms and internal tools behind technical learning: content pipelines, LLM-powered generation and review, and developer-facing web apps.</p>
+                <p>My work spans the full stack. I build product features in <span class="em">Node.js</span> and <span class="em">Next.js</span>, design AI pipelines that produce courses, blogs and practice questions, and own the delivery side with <span class="em">Docker</span>, <span class="em">Kubernetes</span>, <span class="em">CI/CD</span> and observability.</p>
+                <p>Before industry, I spent five years teaching Data Structures, OOP, Databases and Web Development at PUCIT, FAST and UMT. Teaching still shapes how I engineer: clear interfaces, honest documentation, and code the next person can understand.</p>
+            </section>
 
-                <section>
-                    <h2>Experience</h2>
-                    <article class="entry">
-                        <div class="entry-head">
-                            <h3>Software Engineer</h3>
-                            <span class="date">Jul 2021 – Present</span>
+            <section id="experience" class="section" aria-label="Experience">
+                <h2 class="sticky-title">Experience</h2>
+                <ol class="list hover-group">
+                    <li class="item">
+                        <div class="when">2021 — Present</div>
+                        <div class="what">
+                            <h3><a href="https://www.educative.io" target="_blank" rel="noopener">Software Engineer · Educative <span class="arrow">↗</span></a></h3>
+                            <ul class="bullets">
+                                <li>Build web platforms and AI-powered tools for technical learning, including course and content pipelines, internal automation and developer-facing web apps.</li>
+                                <li>Led Node.js backend development for enterprise applications using MongoDB and Express.js.</li>
+                                <li>Resolved high-priority production bugs and optimized database queries to improve stability.</li>
+                                <li>Built Playwright-based checks that replace hours of manual QA across course collections.</li>
+                            </ul>
+                            <ul class="pills"><li>Node.js</li><li>Next.js</li><li>TypeScript</li><li>MongoDB</li><li>LLM APIs</li><li>Playwright</li><li>Docker</li></ul>
                         </div>
-                        <p class="org">Educative</p>
-                        <ul>
-                            <li>Build web platforms and AI-powered tools for technical learning, including course and content pipelines, internal automation and developer-facing web apps.</li>
-                            <li>Led Node.js backend development for enterprise applications using MongoDB and Express.js.</li>
-                            <li>Resolved high-priority bugs and optimized database queries to improve stability.</li>
-                            <li>Built Playwright-based checks and scripts that replace hours of manual QA work.</li>
-                        </ul>
-                    </article>
-                    <article class="entry">
-                        <div class="entry-head">
-                            <h3>Lecturer &amp; Lab Instructor</h3>
-                            <span class="date">2016 – 2021</span>
+                    </li>
+                    <li class="item">
+                        <div class="when">2016 — 2021</div>
+                        <div class="what">
+                            <h3>Lecturer &amp; Lab Instructor · PUCIT, FAST NUCES, UMT</h3>
+                            <ul class="bullets">
+                                <li>Taught Data Structures, Object-Oriented Programming, Database Systems and Web Development.</li>
+                                <li>Mentored students through debugging and building full-stack applications.</li>
+                            </ul>
                         </div>
-                        <p class="org">PUCIT · FAST NUCES · UMT</p>
-                        <ul>
-                            <li>Taught Data Structures, Object-Oriented Programming, Database Systems and Web Development.</li>
-                            <li>Guided students in debugging and building full-stack applications.</li>
-                        </ul>
-                    </article>
-                    <article class="entry">
-                        <div class="entry-head">
-                            <h3>Software Engineer</h3>
-                            <span class="date">2016 – 2017</span>
+                    </li>
+                    <li class="item">
+                        <div class="when">2016 — 2017</div>
+                        <div class="what">
+                            <h3>Software Engineer · SolutionInn</h3>
+                            <ul class="bullets">
+                                <li>Implemented in-browser PDF viewing and optimized the admin panel for a better user experience.</li>
+                                <li>Improved site performance and functionality using data-driven insights.</li>
+                            </ul>
                         </div>
-                        <p class="org">SolutionInn</p>
-                        <ul>
-                            <li>Implemented PDF viewing and optimized the admin panel for a better user experience.</li>
-                            <li>Improved website performance and functionality using data-driven insights.</li>
-                        </ul>
-                    </article>
-                </section>
+                    </li>
+                </ol>
+                <div class="edu">
+                    <h3 class="mini">Education</h3>
+                    <div class="edu-row"><span>MS Computer Science · FAST NUCES</span><span class="when">2018 — 2020</span></div>
+                    <div class="edu-row"><span>BS Computer Science · PUCIT, University of the Punjab</span><span class="when">2013 — 2017</span></div>
+                </div>
+            </section>
 
-                <section>
-                    <h2>Selected Projects</h2>
-                    <div id="projects"></div>
-                    <p class="note">All source code is available at <a href="https://github.com/Mian-Basam?tab=repositories" target="_blank" rel="noopener">github.com/Mian-Basam</a>.</p>
-                </section>
-            </main>
+            <section id="projects" class="section" aria-label="Projects">
+                <h2 class="sticky-title">Projects</h2>
+                <div class="filters" role="tablist" aria-label="Filter projects">
+                    <button class="filter active" data-f="all" role="tab" aria-selected="true">All <sup id="countAll"></sup></button>
+                    <button class="filter" data-f="devops" role="tab" aria-selected="false">DevOps &amp; Infra</button>
+                    <button class="filter" data-f="web" role="tab" aria-selected="false">Full-stack</button>
+                    <button class="filter" data-f="ai" role="tab" aria-selected="false">AI &amp; Automation</button>
+                </div>
+                <ol class="list hover-group" id="projectList"></ol>
+                <a class="more" href="https://github.com/Mian-Basam?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub <span class="arrow">→</span></a>
+            </section>
 
-            <aside class="side">
-                <section>
-                    <h2>Core Skills</h2>
-                    <h4>Languages</h4>
-                    <p class="skills">TypeScript, JavaScript, Python, Bash, Kotlin, SQL</p>
-                    <h4>Web &amp; Backend</h4>
-                    <p class="skills">Node.js, Express, Next.js, React, Flask, REST APIs, WebSocket</p>
-                    <h4>Databases</h4>
-                    <p class="skills">MongoDB, PostgreSQL, SQLite</p>
-                    <h4>DevOps &amp; Cloud</h4>
-                    <p class="skills">Docker, Kubernetes, Ansible, Jenkins, GitHub Actions, Nginx, Linux</p>
-                    <h4>Observability</h4>
-                    <p class="skills">Prometheus, Grafana, Loki, Alertmanager</p>
-                    <h4>AI &amp; Automation</h4>
-                    <p class="skills">LLM pipelines, prompt engineering, OpenAI API, OpenCV, Playwright</p>
-                </section>
+            <section id="skills" class="section" aria-label="Skills">
+                <h2 class="sticky-title">Skills</h2>
+                <dl class="skills">
+                    <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, Bash, Kotlin, SQL</dd></div>
+                    <div><dt>Web &amp; backend</dt><dd>Node.js, Express, Next.js, React, Flask, REST, WebSocket</dd></div>
+                    <div><dt>Data</dt><dd>MongoDB, PostgreSQL, SQLite</dd></div>
+                    <div><dt>DevOps &amp; cloud</dt><dd>Docker, Kubernetes, Ansible, Jenkins, GitHub Actions, Nginx, Linux</dd></div>
+                    <div><dt>Observability</dt><dd>Prometheus, Grafana, Loki, Alertmanager</dd></div>
+                    <div><dt>AI &amp; automation</dt><dd>LLM pipelines, prompt engineering, OpenAI API, OpenCV, Playwright</dd></div>
+                </dl>
+            </section>
 
-                <section>
-                    <h2>Education</h2>
-                    <div class="edu">
-                        <h3>MS Computer Science</h3>
-                        <p>FAST NUCES</p>
-                        <p class="muted">2018 – 2020 · GPA 3.5 / 4.0</p>
-                    </div>
-                    <div class="edu">
-                        <h3>BS Computer Science</h3>
-                        <p>PUCIT, University of the Punjab</p>
-                        <p class="muted">2013 – 2017 · GPA 3.39 / 4.0</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Strengths</h2>
-                    <ul class="plain">
-                        <li>Problem solving</li>
-                        <li>Technical writing &amp; teaching</li>
-                        <li>Mentoring engineers</li>
-                        <li>Agile collaboration</li>
-                    </ul>
-                </section>
-            </aside>
-        </div>
-
-        <footer class="footer">© <span id="year">2026</span> Mian Basam Ahmad</footer>
+            <footer class="foot">
+                <p>Designed and built by Mian Basam Ahmad. Plain HTML, CSS and JavaScript, hosted on GitHub Pages. Set in <span class="em">Inter</span> and <span class="em">JetBrains Mono</span>.</p>
+            </footer>
+        </main>
     </div>
 
     <script>
         const GH = "https://github.com/Mian-Basam/";
-        const groups = [
-            { title: "DevOps & Infrastructure", items: [
-                ["devops-portfolio", "DevOps Portfolio", "Five hands-on DevOps projects, from Linux scripting to CI/CD on Kubernetes, each with a one-command install and run.", "Bash, Docker, Ansible, Kubernetes"],
-                ["payflow-devops-pipeline", "PayFlow CI/CD Pipeline", "End-to-end delivery pipeline with Trivy security scanning, canary deployments and automatic rollback.", "Jenkins, TeamCity, GitHub Actions, Kubernetes"],
-                ["observability-stack", "Observability Stack", "Metrics, logs and alerting platform with chaos endpoints, alert unit tests and operational runbooks.", "Prometheus, Grafana, Loki, Alertmanager, Zabbix"],
-                ["docker-three-tier-app", "Docker Three-Tier Application", "Nginx, Flask and PostgreSQL with secrets, health checks, scaling, backup/restore and end-to-end tests.", "Docker Compose, Flask, PostgreSQL"],
-                ["ansible-infra-provisioning", "Ansible Infrastructure Provisioning", "Hardened servers, an Nginx load balancer, zero-downtime rolling updates and OS patching as code.", "Ansible, Vagrant, Nginx"],
-                ["linux-ops-toolkit", "Linux Ops Toolkit", "Production-style Bash tools for health reports, network checks and backups, scheduled with systemd timers.", "Bash, systemd, ShellCheck, Bats"]
-            ]},
-            { title: "Full-Stack Development", items: [
-                ["Ecommerce", "ShopOnline E-commerce Platform", "Online store with product catalog, deals, reviews, JWT authentication and cart.", "Next.js 15, TypeScript, Express, MongoDB"],
-                ["PDF_Editor", "Browser-Based PDF Editor", "Edit text, annotate, sign, merge and reorder PDF pages entirely client-side, with no file uploads.", "Next.js, React, TypeScript, pdf-lib"]
-            ]},
-            { title: "AI & Automation", items: [
-                ["Mobile-Course-Educative", "AI Content Studio", "Multi-stage AI pipelines that generate blogs, newsletters and mobile courses, with streaming and image generation.", "Next.js, TypeScript, LLM APIs"],
-                ["Chat-bot-using-openAI", "Flask GPT Chatbot", "Conversational assistant with context-aware replies and persistent conversation history.", "Python, Flask, OpenAI, SQLite"],
-                ["educative-docker-image-failure-testing", "Build Status Checker", "Automated read-only checker that verifies Docker image builds across course collections and reports results.", "Python, Playwright"],
-                ["OpenCV-Image-Processing", "OpenCV Image Processing Lab", "Computer vision lab covering core concepts and 12 practical tasks with worked solutions.", "Python, OpenCV, Jupyter"],
-                ["Prompts", "LLM Prompt Library", "Prompts for persona-driven technical writing, editorial review and Socratic AI tutoring.", "Prompt engineering"]
-            ]}
+        const projects = [
+            ["devops", "devops-portfolio", "DevOps Portfolio", "Five hands-on DevOps projects that build on each other, from Linux scripting to a full CI/CD pipeline on Kubernetes. Each one installs and runs with a single command.", ["Bash", "Docker", "Ansible", "Kubernetes", "CI/CD"]],
+            ["devops", "payflow-devops-pipeline", "PayFlow CI/CD Pipeline", "End-to-end delivery for a payments service across Jenkins, TeamCity, Bitbucket and GitHub Actions, with Trivy scanning, canary releases and automatic rollback.", ["Jenkins", "GitHub Actions", "Kubernetes", "Trivy"]],
+            ["devops", "observability-stack", "Observability Stack", "Metrics, logs and alerting with Prometheus, Grafana, Loki, Alertmanager and Zabbix. Includes chaos endpoints, alert unit tests and runbooks.", ["Prometheus", "Grafana", "Loki", "Zabbix"]],
+            ["devops", "docker-three-tier-app", "Docker Three-Tier App", "Nginx, Flask and PostgreSQL wired with Compose secrets, health checks, horizontal scaling, backup/restore and end-to-end tests.", ["Docker Compose", "Flask", "PostgreSQL"]],
+            ["devops", "ansible-infra-provisioning", "Ansible Infrastructure", "Hardened servers, an Nginx load balancer, zero-downtime rolling updates and OS patching, all as code on a Vagrant lab.", ["Ansible", "Vagrant", "Nginx"]],
+            ["devops", "linux-ops-toolkit", "Linux Ops Toolkit", "Production-style Bash tools for health reports, network checks and backups, scheduled with systemd timers, linted with ShellCheck and tested with Bats.", ["Bash", "systemd", "Bats"]],
+            ["web", "Ecommerce", "ShopOnline", "A full-stack store with catalog, deals, reviews, JWT authentication and cart, built on Next.js 15 and an Express + MongoDB API.", ["Next.js", "TypeScript", "Express", "MongoDB"]],
+            ["web", "PDF_Editor", "PDF Editor", "Edit text, annotate, sign, merge and reorder PDF pages entirely in the browser. Files never leave the device.", ["Next.js", "React", "pdf-lib"]],
+            ["ai", "Mobile-Course-Educative", "AI Content Studio", "Multi-stage LLM pipelines that generate blogs, newsletters and mobile courses, with real-time streaming and parallel image generation.", ["Next.js", "TypeScript", "LLM APIs"]],
+            ["ai", "Chat-bot-using-openAI", "Flask GPT Chatbot", "A conversational assistant with context-aware replies and persistent history in SQLite.", ["Python", "Flask", "OpenAI"]],
+            ["ai", "educative-docker-image-failure-testing", "Build Status Checker", "A read-only Playwright tool that verifies Docker image builds across course collections and writes a report.", ["Python", "Playwright"]],
+            ["ai", "OpenCV-Image-Processing", "OpenCV Lab", "A computer vision lab covering core concepts and twelve practical tasks with worked solutions.", ["Python", "OpenCV", "Jupyter"]],
+            ["ai", "Prompts", "LLM Prompt Library", "Prompts for persona-driven technical writing, editorial review and Socratic tutoring.", ["Prompt engineering"]]
         ];
-        document.getElementById("projects").innerHTML = groups.map(g => `
-            <h4 class="group">${g.title}</h4>
-            ${g.items.map(([repo, name, desc, stack]) => `
-                <div class="project">
-                    <div class="entry-head">
-                        <h3><a href="${GH + repo}" target="_blank" rel="noopener">${name}</a></h3>
-                        <a class="repo" href="${GH + repo}" target="_blank" rel="noopener"><i class="fab fa-github"></i> ${repo}</a>
-                    </div>
+        const icons = {
+            devops: '<path d="M4 17l6-6-6-6M12 19h8"/>',
+            web: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>',
+            ai: '<path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/>'
+        };
+        const list = document.getElementById("projectList");
+        list.innerHTML = projects.map(([cat, repo, name, desc, tags], i) => `
+            <li class="item project" data-cat="${cat}">
+                <div class="when"><span class="glyph"><svg viewBox="0 0 24 24">${icons[cat]}</svg></span></div>
+                <div class="what">
+                    <h3><a href="${GH + repo}" target="_blank" rel="noopener"><span class="cover"></span>${name} <span class="arrow">↗</span></a></h3>
                     <p>${desc}</p>
-                    <p class="stack">${stack}</p>
-                </div>`).join("")}`).join("");
+                    <ul class="pills">${tags.map(t => `<li>${t}</li>`).join("")}</ul>
+                </div>
+            </li>`).join("");
+        document.getElementById("countAll").textContent = projects.length;
 
-        const toggle = document.getElementById("themeToggle");
-        const icon = toggle.querySelector("i");
+        document.querySelectorAll(".filter").forEach(btn => btn.addEventListener("click", () => {
+            document.querySelectorAll(".filter").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+            btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
+            const f = btn.dataset.f;
+            list.querySelectorAll(".project").forEach((li, i) => {
+                const show = f === "all" || li.dataset.cat === f;
+                li.hidden = !show;
+                if (show) { li.classList.remove("pop"); void li.offsetWidth; li.classList.add("pop"); }
+            });
+        }));
+
+        /* Theme */
+        const root = document.documentElement;
         let saved = null;
         try { saved = localStorage.getItem("theme"); } catch (e) {}
-        let dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-        function setTheme(d) {
-            document.documentElement.dataset.theme = d ? "dark" : "light";
-            icon.className = d ? "fas fa-sun" : "fas fa-moon";
-            try { localStorage.setItem("theme", d ? "dark" : "light"); } catch (e) {}
-        }
-        setTheme(dark);
-        toggle.addEventListener("click", () => setTheme(dark = !dark));
+        if (saved) root.dataset.theme = saved;
+        document.getElementById("themeToggle").addEventListener("click", () => {
+            root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+            try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+        });
         document.getElementById("printBtn").addEventListener("click", () => window.print());
-        document.getElementById("year").textContent = new Date().getFullYear();
 
-        /* ---------- Animations ---------- */
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        // Skills as chips
-        document.querySelectorAll(".skills").forEach(p => {
-            p.innerHTML = p.textContent.split(",").map(s => `<span class="chip">${s.trim()}</span>`).join("");
-        });
-
-        // Name: letter-by-letter entrance
-        const nameEl = document.getElementById("name");
-        nameEl.setAttribute("aria-label", nameEl.textContent);
-        nameEl.innerHTML = [...nameEl.textContent].map((ch, i) =>
-            `<span class="ltr" aria-hidden="true" style="--i:${i}">${ch === " " ? "&nbsp;" : ch}</span>`).join("");
-
-        // Reveal on scroll, staggered within each parent
-        const targets = document.querySelectorAll(".contact li, section, .entry, .project, .group, .chip, .edu, .plain li, .stat");
-        targets.forEach(el => {
-            el.classList.add("reveal");
-            const sibs = [...el.parentElement.children].filter(c => c.classList.contains("reveal"));
-            el.style.setProperty("--d", (sibs.indexOf(el) * 60) + "ms");
-        });
-        const countUp = el => {
-            const end = +el.dataset.count, suf = el.dataset.suffix || "";
-            if (reduce) { el.textContent = end + suf; return; }
-            const t0 = performance.now(), dur = 1200;
-            const step = t => {
-                const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-                el.textContent = Math.round(end * e) + (k === 1 ? suf : "");
-                if (k < 1) requestAnimationFrame(step);
-            };
-            requestAnimationFrame(step);
-        };
-        if ("IntersectionObserver" in window && !reduce) {
-            const io = new IntersectionObserver(entries => entries.forEach(en => {
-                if (!en.isIntersecting) return;
-                en.target.classList.add("in");
-                en.target.querySelectorAll("[data-count]").forEach(countUp);
-                io.unobserve(en.target);
-            }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-            targets.forEach(el => io.observe(el));
-        } else {
-            targets.forEach(el => el.classList.add("in"));
-            document.querySelectorAll("[data-count]").forEach(countUp);
-        }
-        window.addEventListener("beforeprint", () => {
-            targets.forEach(el => el.classList.add("in"));
-            document.querySelectorAll("[data-count]").forEach(el => el.textContent = el.dataset.count + (el.dataset.suffix || ""));
-        });
-
-        // Rotating headline with typing effect
-        const words = ["Full-Stack Development", "DevOps & Cloud", "AI Tooling", "Automation"];
-        const rot = document.getElementById("rotator");
-        if (!reduce) {
-            let w = 0, c = words[0].length, deleting = true;
-            setTimeout(function tick() {
-                const word = words[w];
-                c += deleting ? -1 : 1;
-                rot.textContent = word.slice(0, c);
-                let delay = deleting ? 40 : 75;
-                if (!deleting && c === word.length) { deleting = true; delay = 2200; }
-                else if (deleting && c === 0) { deleting = false; w = (w + 1) % words.length; c = 0; delay = 300; }
-                setTimeout(tick, delay);
-            }, 2600);
-        }
-
-        // Scroll progress bar
-        const bar = document.getElementById("progress");
-        const onScroll = () => {
-            const h = document.documentElement.scrollHeight - innerHeight;
-            bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
-        };
-        addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
-
-        // Subtle tilt on project rows following the cursor
+        /* Cursor spotlight */
+        const spot = document.querySelector(".spotlight");
         if (!reduce && matchMedia("(hover: hover)").matches) {
-            document.querySelectorAll(".project").forEach(p => {
-                p.addEventListener("mousemove", e => {
-                    const r = p.getBoundingClientRect();
-                    p.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
-                });
-            });
+            addEventListener("pointermove", e => {
+                spot.style.setProperty("--x", e.clientX + "px");
+                spot.style.setProperty("--y", e.clientY + "px");
+            }, { passive: true });
         }
+
+        /* Active section in nav */
+        const links = [...document.querySelectorAll("[data-nav]")];
+        const sections = links.map(a => document.getElementById(a.dataset.nav));
+        const setActive = () => {
+            let cur = sections[0].id;
+            for (const s of sections) if (s.getBoundingClientRect().top < innerHeight * 0.35) cur = s.id;
+            if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) cur = sections[sections.length - 1].id;
+            links.forEach(a => a.classList.toggle("active", a.dataset.nav === cur));
+        };
+        addEventListener("scroll", setActive, { passive: true });
+        setActive();
+
+        /* Reveal on scroll */
+        const items = document.querySelectorAll(".section > p, .item, .edu, .skills > div, .filters, .more");
+        items.forEach(el => el.classList.add("reveal"));
+        if ("IntersectionObserver" in window && !reduce) {
+            const io = new IntersectionObserver(es => es.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+            }), { rootMargin: "0px 0px -8% 0px" });
+            items.forEach(el => io.observe(el));
+        } else items.forEach(el => el.classList.add("in"));
+        addEventListener("beforeprint", () => items.forEach(el => el.classList.add("in")));
     </script>
 </body>
 </html>
