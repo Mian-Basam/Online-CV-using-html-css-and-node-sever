@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="progress" id="progress"></div>
+    <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="toolbar">
         <button class="tool-btn" id="printBtn"><i class="fas fa-download"></i> Download PDF</button>
         <button class="tool-btn icon" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
@@ -20,8 +22,8 @@
     <div class="page">
         <header class="header">
             <div>
-                <h1>Mian Basam Ahmad</h1>
-                <p class="title">Software Engineer · Full-Stack, DevOps &amp; AI Tooling</p>
+                <h1 id="name">Mian Basam Ahmad</h1>
+                <p class="title">Software Engineer · <span class="rotator" id="rotator">Full-Stack Development</span><span class="caret" aria-hidden="true"></span><span class="print-only">Full-Stack, DevOps &amp; AI Tooling</span></p>
             </div>
             <ul class="contact">
                 <li><i class="fas fa-envelope"></i><a href="mailto:mbasamahmad@gmail.com">mbasamahmad@gmail.com</a></li>
@@ -36,6 +38,11 @@
                 <section>
                     <h2>Professional Summary</h2>
                     <p>Software Engineer with over five years at Educative building web platforms, AI-powered content tools and the infrastructure that ships them. Experienced across the stack, from Node.js and Next.js applications to LLM pipelines, CI/CD and observability. Brings five years of university teaching in Computer Science, with a strong focus on clear engineering, documentation and mentoring.</p>
+                    <div class="stats">
+                        <div class="stat"><strong data-count="5" data-suffix="+">0</strong><span>Years at Educative</span></div>
+                        <div class="stat"><strong data-count="13">0</strong><span>Public projects</span></div>
+                        <div class="stat"><strong data-count="5">0</strong><span>Years teaching CS</span></div>
+                    </div>
                 </section>
 
                 <section>
@@ -179,6 +186,90 @@
         toggle.addEventListener("click", () => setTheme(dark = !dark));
         document.getElementById("printBtn").addEventListener("click", () => window.print());
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        /* ---------- Animations ---------- */
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // Skills as chips
+        document.querySelectorAll(".skills").forEach(p => {
+            p.innerHTML = p.textContent.split(",").map(s => `<span class="chip">${s.trim()}</span>`).join("");
+        });
+
+        // Name: letter-by-letter entrance
+        const nameEl = document.getElementById("name");
+        nameEl.setAttribute("aria-label", nameEl.textContent);
+        nameEl.innerHTML = [...nameEl.textContent].map((ch, i) =>
+            `<span class="ltr" aria-hidden="true" style="--i:${i}">${ch === " " ? "&nbsp;" : ch}</span>`).join("");
+
+        // Reveal on scroll, staggered within each parent
+        const targets = document.querySelectorAll(".contact li, section, .entry, .project, .group, .chip, .edu, .plain li, .stat");
+        targets.forEach(el => {
+            el.classList.add("reveal");
+            const sibs = [...el.parentElement.children].filter(c => c.classList.contains("reveal"));
+            el.style.setProperty("--d", (sibs.indexOf(el) * 60) + "ms");
+        });
+        const countUp = el => {
+            const end = +el.dataset.count, suf = el.dataset.suffix || "";
+            if (reduce) { el.textContent = end + suf; return; }
+            const t0 = performance.now(), dur = 1200;
+            const step = t => {
+                const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+                el.textContent = Math.round(end * e) + (k === 1 ? suf : "");
+                if (k < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        };
+        if ("IntersectionObserver" in window && !reduce) {
+            const io = new IntersectionObserver(entries => entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                en.target.classList.add("in");
+                en.target.querySelectorAll("[data-count]").forEach(countUp);
+                io.unobserve(en.target);
+            }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+            targets.forEach(el => io.observe(el));
+        } else {
+            targets.forEach(el => el.classList.add("in"));
+            document.querySelectorAll("[data-count]").forEach(countUp);
+        }
+        window.addEventListener("beforeprint", () => {
+            targets.forEach(el => el.classList.add("in"));
+            document.querySelectorAll("[data-count]").forEach(el => el.textContent = el.dataset.count + (el.dataset.suffix || ""));
+        });
+
+        // Rotating headline with typing effect
+        const words = ["Full-Stack Development", "DevOps & Cloud", "AI Tooling", "Automation"];
+        const rot = document.getElementById("rotator");
+        if (!reduce) {
+            let w = 0, c = words[0].length, deleting = true;
+            setTimeout(function tick() {
+                const word = words[w];
+                c += deleting ? -1 : 1;
+                rot.textContent = word.slice(0, c);
+                let delay = deleting ? 40 : 75;
+                if (!deleting && c === word.length) { deleting = true; delay = 2200; }
+                else if (deleting && c === 0) { deleting = false; w = (w + 1) % words.length; c = 0; delay = 300; }
+                setTimeout(tick, delay);
+            }, 2600);
+        }
+
+        // Scroll progress bar
+        const bar = document.getElementById("progress");
+        const onScroll = () => {
+            const h = document.documentElement.scrollHeight - innerHeight;
+            bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+        };
+        addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        // Subtle tilt on project rows following the cursor
+        if (!reduce && matchMedia("(hover: hover)").matches) {
+            document.querySelectorAll(".project").forEach(p => {
+                p.addEventListener("mousemove", e => {
+                    const r = p.getBoundingClientRect();
+                    p.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+                });
+            });
+        }
     </script>
 </body>
 </html>
